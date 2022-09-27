@@ -1,0 +1,14 @@
+DEFINED_PHASES=configure install postinst prepare setup
+DEPEND=>=sys-apps/util-linux-2.20 dmalloc? ( dev-libs/dmalloc[threads] ) ldap? ( >=net-nds/openldap-2.0 sasl? ( dev-libs/cyrus-sasl dev-libs/libxml2 virtual/krb5 ) ) libtirpc? ( net-libs/libtirpc ) !libtirpc? ( elibc_glibc? ( sys-libs/glibc[rpc(-)] ) ) sys-devel/flex virtual/yacc libtirpc? ( net-libs/rpcsvc-proto ) virtual/pkgconfig
+DESCRIPTION=Kernel based automounter
+EAPI=6
+HOMEPAGE=http://www.linux-consulting.com/Amd_AutoFS/autofs.html
+IUSE=-dmalloc ldap +libtirpc mount-locking sasl kernel_linux
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=>=sys-apps/util-linux-2.20 dmalloc? ( dev-libs/dmalloc[threads] ) ldap? ( >=net-nds/openldap-2.0 sasl? ( dev-libs/cyrus-sasl dev-libs/libxml2 virtual/krb5 ) ) libtirpc? ( net-libs/libtirpc ) !libtirpc? ( elibc_glibc? ( sys-libs/glibc[rpc(-)] ) )
+REQUIRED_USE=sasl? ( ldap )
+SLOT=0
+SRC_URI=mirror://kernel/linux/daemons/autofs/v5/autofs-5.1.4.tar.xz
+_eclasses_=eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	linux-info	327865b9921771330775d971263dc234	multilib	2477ebe553d3e4d2c606191fe6c33602	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=89a70959daa13024d2e60cd54a9e66e8

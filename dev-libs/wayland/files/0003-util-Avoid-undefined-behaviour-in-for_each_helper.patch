@@ -1,0 +1,79 @@
+From 241f173f365be7e810e8713afe87f07bceb1c813 Mon Sep 17 00:00:00 2001
+From: Fergus Dall <sidereal@google.com>
+Date: Fri, 9 Jul 2021 17:52:01 +1000
+Subject: [PATCH 1/2] util: Avoid undefined behaviour in for_each_helper
+
+for_each_helper tries to calculate a one-past-the-end pointer for its
+wl_array input. This is fine when the array has one or more entries, but we
+initialize arrays by setting wl_array.data to NULL. Pointer arithmetic is
+only defined when both the pointer operand and the result point to the same
+allocation, or one-past-the-end of that allocation. As NULL points to no
+allocation, no pointer arithmetic can be performed on it, not even adding 0,
+even if the result is never dereferenced.
+
+This is caught by clang's ubsan from version 10.
+
+Many tests already hit this case, but I added an explicit test for iterating
+over an empty wl_map.
+
+Signed-off-by: Fergus Dall <sidereal@google.com>
+---
+ src/wayland-util.c |  9 +++++----
+ tests/map-test.c   | 16 ++++++++++++++++
+ 2 files changed, 21 insertions(+), 4 deletions(-)
+
+diff --git a/src/wayland-util.c b/src/wayland-util.c
+index d5973bf..b502643 100644
+--- a/src/wayland-util.c
++++ b/src/wayland-util.c
+@@ -361,18 +361,19 @@ wl_map_lookup_flags(struct wl_map *map, uint32_t i)
+ static enum wl_iterator_result
+ for_each_helper(struct wl_array *entries, wl_iterator_func_t func, void *data)
+ {
+-	union map_entry *start, *end, *p;
+ 	enum wl_iterator_result ret = WL_ITERATOR_CONTINUE;
+ 
+-	start = entries->data;
+-	end = (union map_entry *) ((char *) entries->data + entries->size);
++	union map_entry *start = (union map_entry*)entries->data;
++	size_t count = entries->size / sizeof(union map_entry);
+ 
+-	for (p = start; p < end; p++)
++	for (size_t idx = 0; idx < count; idx++) {
++		union map_entry *p = start + idx;
+ 		if (p->data && !map_entry_is_free(*p)) {
+ 			ret = func(map_entry_get_data(*p), data, map_entry_get_flags(*p));
+ 			if (ret != WL_ITERATOR_CONTINUE)
+ 				break;
+ 		}
++	}
+ 
+ 	return ret;
+ }
+diff --git a/tests/map-test.c b/tests/map-test.c
+index 8ecc1aa..03568ea 100644
+--- a/tests/map-test.c
++++ b/tests/map-test.c
+@@ -119,3 +119,19 @@ TEST(map_flags)
+ 
+ 	wl_map_release(&map);
+ }
++
++static enum wl_iterator_result never_run(void *element, void *data, uint32_t flags)
++{
++	assert(0);
++}
++
++TEST(map_iter_empty)
++{
++	struct wl_map map;
++
++	wl_map_init(&map, WL_MAP_SERVER_SIDE);
++
++	wl_map_for_each(&map, never_run, NULL);
++
++	wl_map_release(&map);
++}
+-- 
+2.32.0.93.g670b81a890-goog
+

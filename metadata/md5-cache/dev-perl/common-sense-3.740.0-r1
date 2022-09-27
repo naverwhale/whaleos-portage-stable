@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=virtual/perl-ExtUtils-MakeMaker dev-lang/perl
+DESCRIPTION=Save a tree AND a kitten, use common::sense!
+EAPI=6
+HOMEPAGE=https://metacpan.org/release/common-sense
+KEYWORDS=*
+LICENSE=|| ( Artistic GPL-1+ )
+RDEPEND=dev-lang/perl:=
+SLOT=0
+SRC_URI=mirror://cpan/authors/id/M/ML/MLEHMANN/common-sense-3.74.tar.gz
+_eclasses_=multiprocessing	c3cf317581e5bd068a4b851f03dd8cba	perl-functions	6ec4c4d8fc8324200f1c14e8d158c59b	perl-module	97206c028d9bdc9f248e022ac5c9fc83
+_md5_=ba603bf9b9cbc8d5a9d9f689fcdc6317

@@ -1,0 +1,13 @@
+BDEPEND=dev-util/gperf sys-devel/bison sys-devel/flex >=app-portage/elt-patches-20170815
+DEFINED_PHASES=install prepare
+DEPEND=sys-libs/readline:= sys-libs/zlib !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=A Verilog simulation and synthesis tool
+EAPI=7
+HOMEPAGE=http://iverilog.icarus.com https://github.com/steveicarus/iverilog
+KEYWORDS=*
+LICENSE=LGPL-2.1
+RDEPEND=sys-libs/readline:= sys-libs/zlib
+SLOT=0
+SRC_URI=https://github.com/steveicarus/iverilog/archive/v11_0.tar.gz -> iverilog-11.0.tar.gz
+_eclasses_=autotools	d0e5375d47f4c809f406eb892e531513	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=f095c52a283a6a6d36a582911bdfa271

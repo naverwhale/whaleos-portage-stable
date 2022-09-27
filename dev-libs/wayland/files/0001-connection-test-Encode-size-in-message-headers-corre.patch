@@ -1,0 +1,78 @@
+From aee23e155474cb3001a8224b247cb6ded7e1f4a3 Mon Sep 17 00:00:00 2001
+From: Fergus Dall <sidereal@google.com>
+Date: Tue, 22 Jun 2021 20:05:47 +1000
+Subject: [PATCH 1/2] connection-test: Encode size in message headers correctly
+
+In these tests, message sizes are inconsistently encoded in either the upper
+or lower 16 bits of the second word of the message. Resolve this in favour
+of using the upper 16 bits, as this is how messages are supposed to be
+encoded, even though that aspect of message decoding isn't being tested
+here.
+
+Signed-off-by: Fergus Dall <sidereal@google.com>
+---
+ tests/connection-test.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/tests/connection-test.c b/tests/connection-test.c
+index c04845b..669d73b 100644
+--- a/tests/connection-test.c
++++ b/tests/connection-test.c
+@@ -394,7 +394,7 @@ demarshal(struct marshal_data *data, const char *format,
+ 	struct wl_closure *closure;
+ 	struct wl_map objects;
+ 	struct wl_object object = { NULL, &func, 0 };
+-	int size = msg[1];
++	int size = msg[1] >> 16;
+ 
+ 	assert(write(data->s[1], msg, size) == size);
+ 	assert(wl_connection_read(data->read_connection) == size);
+@@ -417,39 +417,39 @@ TEST(connection_demarshal)
+ 
+ 	data.value.u = 8000;
+ 	msg[0] = 400200;	/* object id */
+-	msg[1] = 12;		/* size = 12, opcode = 0 */
++	msg[1] = 12 << 16;		/* size = 12, opcode = 0 */
+ 	msg[2] = data.value.u;
+ 	demarshal(&data, "u", msg, (void *) validate_demarshal_u);
+ 
+ 	data.value.i = -557799;
+ 	msg[0] = 400200;
+-	msg[1] = 12;
++	msg[1] = 12 << 16;
+ 	msg[2] = data.value.i;
+ 	demarshal(&data, "i", msg, (void *) validate_demarshal_i);
+ 
+ 	data.value.s = "superdude";
+ 	msg[0] = 400200;
+-	msg[1] = 24;
++	msg[1] = 24 << 16;
+ 	msg[2] = 10;
+ 	memcpy(&msg[3], data.value.s, msg[2]);
+ 	demarshal(&data, "s", msg, (void *) validate_demarshal_s);
+ 
+ 	data.value.s = "superdude";
+ 	msg[0] = 400200;
+-	msg[1] = 24;
++	msg[1] = 24 << 16;
+ 	msg[2] = 10;
+ 	memcpy(&msg[3], data.value.s, msg[2]);
+ 	demarshal(&data, "?s", msg, (void *) validate_demarshal_s);
+ 
+ 	data.value.i = wl_fixed_from_double(-90000.2390);
+ 	msg[0] = 400200;
+-	msg[1] = 12;
++	msg[1] = 12 << 16;
+ 	msg[2] = data.value.i;
+ 	demarshal(&data, "f", msg, (void *) validate_demarshal_f);
+ 
+ 	data.value.s = NULL;
+ 	msg[0] = 400200;
+-	msg[1] = 12;
++	msg[1] = 12 << 16;
+ 	msg[2] = 0;
+ 	demarshal(&data, "?s", msg, (void *) validate_demarshal_s);
+ 
+-- 
+2.32.0.93.g670b81a890-goog
+

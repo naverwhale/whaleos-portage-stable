@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Google tool for managing git, particularly multiple repos
+EAPI=7
+HOMEPAGE=https://gerrit.googlesource.com/git-repo
+IUSE=python_targets_python3_6 python_targets_python3_7 python_targets_python3_8 python_targets_python3_9
+KEYWORDS=*
+LICENSE=Apache-2.0
+RDEPEND=python_targets_python3_6? ( dev-lang/python:3.6 ) python_targets_python3_7? ( dev-lang/python:3.7 ) python_targets_python3_8? ( dev-lang/python:3.8 ) python_targets_python3_9? ( dev-lang/python:3.9 ) >=dev-lang/python-exec-2:=[python_targets_python3_6(-)?,python_targets_python3_7(-)?,python_targets_python3_8(-)?,python_targets_python3_9(-)?,-python_single_target_python3_6(-),-python_single_target_python3_7(-),-python_single_target_python3_8(-),-python_single_target_python3_9(-)] !app-admin/radmind !dev-util/repo
+REQUIRED_USE=|| ( python_targets_python3_6 python_targets_python3_7 python_targets_python3_8 python_targets_python3_9 )
+SLOT=0
+SRC_URI=https://storage.googleapis.com/git-repo-downloads/repo-2.15 https://gerrit.googlesource.com/git-repo/+/511a0e54f5801a3f36c00fac478a596d83867d10/completion.bash?format=TEXT -> repo-511a0e54f5801a3f36c00fac478a596d83867d10-bash-completion.sh.base64
+_eclasses_=bash-completion-r1	47a7402d95930413ce25ba8d857339bb	multibuild	40fe59465edacd730c644ec2bc197809	multilib	2477ebe553d3e4d2c606191fe6c33602	python-r1	79e26ce8f853c9daebe9a4956e37cc1b	python-utils-r1	157a6a7a3e99c7dbdf81acc9dd4f57cd	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=36abbbe79dc9f4b1cf231ea6aa310244

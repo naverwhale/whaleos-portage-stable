@@ -1,0 +1,66 @@
+From d514bc6d906ccbb3a8bd9afd2fc214f010c293c6 Mon Sep 17 00:00:00 2001
+From: Fergus Dall <sidereal@google.com>
+Date: Tue, 22 Jun 2021 19:31:26 +1000
+Subject: [PATCH 2/2] connection: Handle non-nullable strings in
+ wl_connection_demarshal
+
+Currently a null string passed into a non-nullable argument of a message
+will decode succesfully, probably resulting in the handler function
+crashing. Instead treat it the same way we do non-nullable objects and ids.
+
+Signed-off-by: Fergus Dall <sidereal@google.com>
+---
+ src/connection.c        |  7 +++++++
+ tests/connection-test.c | 18 ++++++++++++++++++
+ 2 files changed, 25 insertions(+)
+
+diff --git a/src/connection.c b/src/connection.c
+index d0c7d9f..557c611 100644
+--- a/src/connection.c
++++ b/src/connection.c
+@@ -749,6 +749,13 @@ wl_connection_demarshal(struct wl_connection *connection,
+ 		case 's':
+ 			length = *p++;
+ 
++			if (length == 0 && !arg.nullable) {
++				wl_log("NULL string received on non-nullable "
++				       "type, message %s(%s)\n", message->name,
++				       message->signature);
++				errno = EINVAL;
++				goto err;
++			}
+ 			if (length == 0) {
+ 				closure->args[i].s = NULL;
+ 				break;
+diff --git a/tests/connection-test.c b/tests/connection-test.c
+index 669d73b..7220d87 100644
+--- a/tests/connection-test.c
++++ b/tests/connection-test.c
+@@ -553,6 +553,24 @@ expected_fail_demarshal(struct marshal_data *data, const char *format,
+ 	assert(errno == expected_error);
+ }
+ 
++TEST(connection_demarshal_null_strings)
++{
++	struct marshal_data data;
++	uint32_t msg[3];
++
++	setup_marshal_data(&data);
++
++	data.value.s = NULL;
++	msg[0] = 400200;	/* object id */
++	msg[1] = 12 << 16;	/* size = 12, opcode = 0 */
++	msg[2] = 0;		/* string length = 0 */
++	demarshal(&data, "?s", msg, (void *) validate_demarshal_s);
++
++	expected_fail_demarshal(&data, "s", msg, EINVAL);
++
++	release_marshal_data(&data);
++}
++
+ /* These tests are verifying that the demarshaling code will gracefully handle
+  * clients lying about string and array lengths and giving values near
+  * UINT32_MAX. Before fixes f7fdface and f5b9e3b9 this test would crash on
+-- 
+2.32.0.93.g670b81a890-goog
+

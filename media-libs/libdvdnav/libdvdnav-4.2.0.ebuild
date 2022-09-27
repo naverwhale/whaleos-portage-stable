@@ -1,0 +1,31 @@
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libdvdnav/libdvdnav-4.2.0.ebuild,v 1.7 2012/04/12 23:40:17 vapier Exp $
+
+EAPI=4
+inherit autotools
+
+DESCRIPTION="Library for DVD navigation tools"
+HOMEPAGE="http://dvdnav.mplayerhq.hu/"
+SRC_URI="http://dvdnav.mplayerhq.hu/releases/${P}.tar.bz2"
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="*"
+IUSE=""
+
+RDEPEND=">=media-libs/libdvdread-${PV}"
+DEPEND="${RDEPEND}"
+
+DOCS=( AUTHORS ChangeLog DEVELOPMENT-POLICY.txt doc/dvd_structures NEWS README TODO )
+
+src_prepare() {
+	sed -i -e '/^CFLAGS/s:-O3::' configure.ac || die
+	epatch "${FILESDIR}"/${PN}-4.2.0-pkgconfig.patch
+	eautoreconf
+}
+
+src_install() {
+	default
+	rm -f "${ED}"usr/lib*/${PN}*.la
+}

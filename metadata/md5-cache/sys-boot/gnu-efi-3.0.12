@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=Library for build EFI Applications
+EAPI=7
+HOMEPAGE=https://sourceforge.net/projects/gnu-efi/
+IUSE=abi_x86_32 abi_x86_64 custom-cflags
+KEYWORDS=*
+LICENSE=GPL-2+ BSD BSD-2
+RESTRICT=strip
+SLOT=0
+SRC_URI=mirror://sourceforge/gnu-efi/gnu-efi-3.0.12.tar.bz2
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	5d5921a298e95441da2f85be419894c0	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=840ad49858f73dc428fd5da03b7a9b51

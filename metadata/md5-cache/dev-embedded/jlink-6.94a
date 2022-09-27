@@ -1,0 +1,13 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=install nofetch
+DESCRIPTION=Tools for Segger J-Link JTAG adapters
+EAPI=7
+HOMEPAGE=https://www.segger.com/jlink-software.html
+KEYWORDS=-* amd64
+LICENSE=SEGGER
+RDEPEND=media-libs/fontconfig media-libs/freetype sys-devel/gcc sys-libs/glibc x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes x11-libs/libXrandr
+RESTRICT=fetch strip
+SLOT=0
+SRC_URI=https://www.segger.com/downloads/jlink/JLink_Linux_V694a_x86_64.tgz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6	udev	452708c3f55cf6e918b045adb949a9e6
+_md5_=e22c9569b1bea9d07124ad78e8bfc634

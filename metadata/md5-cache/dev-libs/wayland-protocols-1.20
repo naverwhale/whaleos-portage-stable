@@ -1,0 +1,12 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=prepare test
+DEPEND=dev-libs/wayland
+DESCRIPTION=Wayland protocol files
+EAPI=7
+HOMEPAGE=https://wayland.freedesktop.org/
+KEYWORDS=*
+LICENSE=MIT
+RDEPEND=dev-libs/wayland
+SLOT=0
+SRC_URI=https://wayland.freedesktop.org/releases/wayland-protocols-1.20.tar.xz
+_md5_=5958b3f49394fea3d94590d12ec0c713

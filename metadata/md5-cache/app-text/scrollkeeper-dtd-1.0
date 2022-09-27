@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install postinst postrm unpack
+DEPEND=>=dev-libs/libxml2-2.4.19 !<app-text/scrollkeeper-9999-r1
+DESCRIPTION=DTD from the Scrollkeeper package
+EAPI=0
+HOMEPAGE=http://scrollkeeper.sourceforge.net/
+KEYWORDS=*
+LICENSE=FDL-1.1
+RDEPEND=>=dev-libs/libxml2-2.4.19
+SLOT=1.0
+SRC_URI=http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd
+_md5_=bf99897b0d1f35c490a9c7570e0d9988

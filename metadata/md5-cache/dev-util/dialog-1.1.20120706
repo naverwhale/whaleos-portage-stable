@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=>=sys-libs/ncurses-5.2-r5 unicode? ( sys-libs/ncurses[unicode] ) nls? ( sys-devel/gettext ) !minimal? ( sys-devel/libtool ) !<=sys-freebsd/freebsd-contrib-8.9999
+DESCRIPTION=tool to display dialog boxes from a shell
+EAPI=4
+HOMEPAGE=http://invisible-island.net/dialog/dialog.html
+IUSE=examples minimal nls static-libs unicode
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=>=sys-libs/ncurses-5.2-r5 unicode? ( sys-libs/ncurses[unicode] )
+SLOT=0
+SRC_URI=ftp://invisible-island.net/dialog/dialog-1.1-20120706.tgz
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=fde716d6e2ce131bc04568eecd2ab95e

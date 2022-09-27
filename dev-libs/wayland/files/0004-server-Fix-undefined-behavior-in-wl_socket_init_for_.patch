@@ -1,0 +1,54 @@
+From 73f3b14b87742512cf535f07dddc22954d5d6677 Mon Sep 17 00:00:00 2001
+From: Fergus Dall <sidereal@google.com>
+Date: Fri, 9 Jul 2021 18:04:27 +1000
+Subject: [PATCH 2/2] server: Fix undefined behavior in
+ wl_socket_init_for_display_name
+
+This function constructs a socket path in sun_path using snprintf, which
+returns the amount of space that would have been used if the buffer was
+large enough. It then checks if this is larger then the actual buffer size
+and, if so, returns ENAMETOOLONG. This is correct.
+
+However, after calling snprintf and before checking that the length isn't too
+long, it tries to compute a pointer to the part of the path that matches the
+input name. It does this by adding the computed path length to the pointer to
+the start of the path buffer, which will take it to one-past the null
+terminator, and then walking backwards. If the path fits in the buffer, this
+will take it at most one-past-the-end of the allocation, which is allowed, but
+if the path is longer then the buffer then the pointer addition is undefined behavior.
+
+Fix this by moving the display name computation past the check that the path
+length is not too long.
+
+This is detected by the test socket_path_overflow_server_create under ubsan.
+
+Signed-off-by: Fergus Dall <sidereal@google.com>
+---
+ src/wayland-server.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/wayland-server.c b/src/wayland-server.c
+index d83bdec..d1db3bf 100644
+--- a/src/wayland-server.c
++++ b/src/wayland-server.c
+@@ -1501,8 +1501,6 @@ wl_socket_init_for_display_name(struct wl_socket *s, const char *name)
+ 	name_size = snprintf(s->addr.sun_path, sizeof s->addr.sun_path,
+ 			     "%s%s%s", runtime_dir, separator, name) + 1;
+ 
+-	s->display_name = (s->addr.sun_path + name_size - 1) - strlen(name);
+-
+ 	assert(name_size > 0);
+ 	if (name_size > (int)sizeof s->addr.sun_path) {
+ 		wl_log("error: socket path \"%s%s%s\" plus null terminator"
+@@ -1514,6 +1512,8 @@ wl_socket_init_for_display_name(struct wl_socket *s, const char *name)
+ 		return -1;
+ 	}
+ 
++	s->display_name = (s->addr.sun_path + name_size - 1) - strlen(name);
++
+ 	return 0;
+ }
+ 
+-- 
+2.32.0.93.g670b81a890-goog
+

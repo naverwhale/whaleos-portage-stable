@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install prepare setup test
+DEPEND=sys-devel/flex sys-devel/bison doc? ( || ( dev-lang/python:3.6 >=dev-lang/python-2.7.5-r2:2.7 ) ) app-text/ghostscript-gpl dev-lang/perl media-libs/libpng:0= virtual/libiconv clang? ( >=sys-devel/clang-4.0.0:= ) dot? ( media-gfx/graphviz media-libs/freetype ) doxysearch? ( dev-libs/xapian:= ) latex? ( dev-texlive/texlive-bibtexextra dev-texlive/texlive-fontsextra dev-texlive/texlive-fontutils dev-texlive/texlive-latex dev-texlive/texlive-latexextra ) qt5? ( dev-qt/qtgui:5 dev-qt/qtwidgets:5 dev-qt/qtxml:5 ) sqlite? ( dev-db/sqlite:3 ) sys-devel/make >=dev-util/cmake-3.9.6
+DESCRIPTION=Documentation system for most programming languages
+EAPI=6
+HOMEPAGE=https://www.stack.nl/~dimitri/doxygen/
+IUSE=clang debug doc dot doxysearch latex qt5 sqlite userland_GNU
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=app-text/ghostscript-gpl dev-lang/perl media-libs/libpng:0= virtual/libiconv clang? ( >=sys-devel/clang-4.0.0:= ) dot? ( media-gfx/graphviz media-libs/freetype ) doxysearch? ( dev-libs/xapian:= ) latex? ( dev-texlive/texlive-bibtexextra dev-texlive/texlive-fontsextra dev-texlive/texlive-fontutils dev-texlive/texlive-latex dev-texlive/texlive-latexextra ) qt5? ( dev-qt/qtgui:5 dev-qt/qtwidgets:5 dev-qt/qtxml:5 ) sqlite? ( dev-db/sqlite:3 )
+REQUIRED_USE=doc? ( latex )
+RESTRICT=test
+SLOT=0
+SRC_URI=http://doxygen.nl/files/doxygen-1.8.15.src.tar.gz
+_eclasses_=cmake-utils	91d6ef31dc426240577497cacbf2508c	desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	5d5921a298e95441da2f85be419894c0	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	multiprocessing	c3cf317581e5bd068a4b851f03dd8cba	ninja-utils	132cbb376048d079b5a012f5467c4e7f	preserve-libs	ef207dc62baddfddfd39a164d9797648	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	157a6a7a3e99c7dbdf81acc9dd4f57cd	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
+_md5_=0aadb3be9db03f8be0dbbde5ea32df31

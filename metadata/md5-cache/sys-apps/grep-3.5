@@ -1,0 +1,15 @@
+BDEPEND=virtual/pkgconfig nls? ( sys-devel/gettext )
+DEFINED_PHASES=configure prepare
+DEPEND=!static? ( pcre? ( >=dev-libs/libpcre-7.8-r1 ) sparc? ( dev-libs/libsigsegv ) ) nls? ( virtual/libintl ) virtual/libiconv static? ( pcre? ( >=dev-libs/libpcre-7.8-r1[static-libs(+)] ) sparc? ( dev-libs/libsigsegv ) )
+DESCRIPTION=GNU regular expression matcher
+EAPI=7
+HOMEPAGE=https://www.gnu.org/software/grep/
+IUSE=nls pcre static
+KEYWORDS=*
+LICENSE=GPL-3+
+RDEPEND=!static? ( pcre? ( >=dev-libs/libpcre-7.8-r1 ) sparc? ( dev-libs/libsigsegv ) ) nls? ( virtual/libintl ) virtual/libiconv
+REQUIRED_USE=static? ( !sparc )
+SLOT=0
+SRC_URI=mirror://gnu/grep/grep-3.5.tar.xz mirror://gentoo/grep-3.5.tar.xz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	5d5921a298e95441da2f85be419894c0	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=c3c9162df20828691125abf60b8fc685

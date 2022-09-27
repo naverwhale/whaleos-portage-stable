@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=Virtual for OpenGL utility library
+EAPI=0
+KEYWORDS=*
+RDEPEND=|| ( media-libs/mesa media-libs/opengl-apple )
+SLOT=0
+_md5_=f622c8fba1df41638cfbefabc6ef89df

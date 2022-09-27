@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=Virtual for PAM (Pluggable Authentication Modules)
+EAPI=3
+KEYWORDS=*
+RDEPEND=|| ( >=sys-libs/pam-0.78 sys-auth/openpam )
+SLOT=0
+_md5_=ebbea0dc5a15218c7f79c0b8840c2c6e

@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=Data files for poppler to support uncommon encodings without xpdfrc
+EAPI=7
+HOMEPAGE=https://poppler.freedesktop.org/
+KEYWORDS=*
+LICENSE=BSD GPL-2 MIT
+SLOT=0
+SRC_URI=https://poppler.freedesktop.org/poppler-data-0.4.10.tar.gz
+_md5_=3f64cb4aa1688ca52369aac7bc550eb8

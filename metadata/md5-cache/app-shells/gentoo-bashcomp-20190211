@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=Gentoo-specific bash command-line completions (emerge, ebuild, equery, etc)
+EAPI=6
+HOMEPAGE=https://gitweb.gentoo.org/proj/gentoo-bashcomp.git/
+KEYWORDS=*
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=https://gitweb.gentoo.org/proj/gentoo-bashcomp.git/snapshot/gentoo-bashcomp-20190211.tar.bz2
+_eclasses_=bash-completion-r1	47a7402d95930413ce25ba8d857339bb	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=1f8b07add6bf825276c8cc7b287f0b78

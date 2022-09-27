@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=alsa? ( media-libs/alsa-lib ) nas? ( media-libs/nas ) pulseaudio? ( media-sound/pulseaudio ) virtual/pkgconfig >=app-portage/elt-patches-20170815
+DESCRIPTION=The Audio Output library
+EAPI=4
+HOMEPAGE=http://www.xiph.org/ao/
+IUSE=alsa nas mmap pulseaudio static-libs
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=alsa? ( media-libs/alsa-lib ) nas? ( media-libs/nas ) pulseaudio? ( media-sound/pulseaudio )
+SLOT=0
+SRC_URI=http://downloads.xiph.org/releases/ao/libao-1.1.0.tar.gz
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	libtool	f143db5a74ccd9ca28c1234deffede96	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=cbd7630e471a51003f9f144de9bd7544

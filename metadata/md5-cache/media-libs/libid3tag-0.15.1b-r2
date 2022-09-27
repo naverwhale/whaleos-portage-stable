@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=>=sys-libs/zlib-1.1.3 dev-util/gperf >=app-portage/elt-patches-20170815
+DESCRIPTION=The MAD id3tag library
+EAPI=2
+HOMEPAGE=http://www.underbit.com/products/mad/
+IUSE=debug static-libs
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=>=sys-libs/zlib-1.1.3
+SLOT=0
+SRC_URI=mirror://sourceforge/mad/libid3tag-0.15.1b.tar.gz
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	libtool	f143db5a74ccd9ca28c1234deffede96	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=ebe97e54b2742144706e0cad5616be75

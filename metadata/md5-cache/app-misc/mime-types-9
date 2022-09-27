@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=Provides /etc/mime.types file
+EAPI=0
+HOMEPAGE=http://www.gentoo.org/
+KEYWORDS=*
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=mirror://gentoo/mime-types-9.tar.bz2
+_md5_=43e59cbc230528726fcc510548d6f750

@@ -1,0 +1,12 @@
+BDEPEND=>=dev-util/meson-0.56.0 >=dev-util/ninja-1.8.2 dev-util/meson-format-array
+DEFINED_PHASES=compile configure install test
+DESCRIPTION=Low-level pixel manipulation routines
+EAPI=7
+HOMEPAGE=http://www.pixman.org/ https://gitlab.freedesktop.org/pixman/pixman/
+IUSE=cpu_flags_ppc_altivec cpu_flags_arm_iwmmxt cpu_flags_arm_iwmmxt2 cpu_flags_arm_neon loongson2f cpu_flags_x86_mmxext cpu_flags_x86_sse2 cpu_flags_x86_ssse3 static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_ppc_32 abi_ppc_64 abi_s390_32 abi_s390_64 abi_arm_32 abi_arm_64
+KEYWORDS=*
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://www.x.org/releases/individual/lib/pixman-0.40.0.tar.xz
+_eclasses_=meson	5ec14fdbc5446b8767e87e186e3b1a52	meson-multilib	485215fef459a86936e377c0eaa513a0	multibuild	40fe59465edacd730c644ec2bc197809	multilib	2477ebe553d3e4d2c606191fe6c33602	multilib-build	1979aa0ff4d356d32507ca4650d9f37d	multilib-minimal	8bddda43703ba94d8341f4e247f97566	multiprocessing	c3cf317581e5bd068a4b851f03dd8cba	ninja-utils	132cbb376048d079b5a012f5467c4e7f	python-utils-r1	157a6a7a3e99c7dbdf81acc9dd4f57cd	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=3f9e1fb20f188ba5a3c94ebaae376c6c

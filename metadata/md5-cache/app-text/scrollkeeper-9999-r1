@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND==app-text/scrollkeeper-dtd-1.0
+DESCRIPTION=Dummy scrollkeeper for testing rarian
+EAPI=0
+HOMEPAGE=http://gnome.gentoo.org
+KEYWORDS=*
+LICENSE=GPL-2
+PDEPEND=app-text/rarian
+RDEPEND==app-text/scrollkeeper-dtd-1.0
+SLOT=0
+_md5_=0c113692836c5cd8ee9e0d154a0758bb

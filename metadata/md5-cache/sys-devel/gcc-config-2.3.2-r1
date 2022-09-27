@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst
+DESCRIPTION=Utility to manage compilers
+EAPI=7
+HOMEPAGE=https://gitweb.gentoo.org/proj/gcc-config.git/
+IUSE=+cc-wrappers +native-symlinks
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=>=sys-apps/gentoo-functions-0.10
+SLOT=0
+SRC_URI=https://dev.gentoo.org/~slyfox/distfiles/gcc-config-2.3.2.tar.xz
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=b20ff84264e0c6588c8eac4857b14cbd

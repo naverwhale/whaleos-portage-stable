@@ -1,0 +1,13 @@
+BDEPEND=app-misc/c_rehash sys-apps/debianutils || ( dev-lang/python:3.9 dev-lang/python:3.8 dev-lang/python:3.7 dev-lang/python:3.6 )
+DEFINED_PHASES=compile install postinst prepare setup unpack
+DESCRIPTION=Common CA Certificates PEM files
+EAPI=7
+HOMEPAGE=https://packages.debian.org/sid/ca-certificates
+IUSE=cacert
+KEYWORDS=*
+LICENSE=MPL-1.1
+RDEPEND=app-misc/c_rehash sys-apps/debianutils
+SLOT=0
+SRC_URI=mirror://debian/pool/main/c/ca-certificates/ca-certificates_20210119.tar.xz https://archive.mozilla.org/pub/security/nss/releases/NSS_3_66_RTM/src/nss-3.66.tar.gz cacert? ( https://dev.gentoo.org/~whissi/dist/ca-certificates/nss-cacert-class1-class3-r2.patch )
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	157a6a7a3e99c7dbdf81acc9dd4f57cd	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=03a5db46d0b98c9e172ad3126d9c7f2e

@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install
+DEPEND=!static? ( sys-libs/zlib ) static? ( sys-libs/zlib[static-libs(+)] ) test? ( app-arch/ncompress )
+DESCRIPTION=A parallel implementation of gzip
+EAPI=7
+HOMEPAGE=https://www.zlib.net/pigz/
+IUSE=static symlink test
+KEYWORDS=*
+LICENSE=ZLIB
+RDEPEND=!static? ( sys-libs/zlib )
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://www.zlib.net/pigz/pigz-2.6.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	5d5921a298e95441da2f85be419894c0	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=6e2a58c9e7bbc0f78749b0a27bf67ebb

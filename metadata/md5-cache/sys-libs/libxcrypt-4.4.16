@@ -1,0 +1,16 @@
+BDEPEND=sys-apps/findutils test? ( || ( ( dev-lang/python:3.8 dev-python/passlib[python_targets_python3_8(-),python_single_target_python3_8(+)] ) ( dev-lang/python:3.7 dev-python/passlib[python_targets_python3_7(-),python_single_target_python3_7(+)] ) ( dev-lang/python:3.6 dev-python/passlib[python_targets_python3_6(-),python_single_target_python3_6(+)] ) ) ) >=app-portage/elt-patches-20170815
+DEFINED_PHASES=compile configure install prepare setup test
+DEPEND=system? ( elibc_glibc? ( sys-libs/glibc[-crypt(+)] ) !sys-libs/musl ) !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=Extended crypt library for descrypt, md5crypt, bcrypt, and others
+EAPI=7
+HOMEPAGE=https://github.com/besser82/libxcrypt
+IUSE=+compat split-usr +static-libs system test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_ppc_32 abi_ppc_64 abi_s390_32 abi_s390_64 abi_arm_32 abi_arm_64
+KEYWORDS=*
+LICENSE=LGPL-2.1+ public-domain BSD BSD-2
+RDEPEND=system? ( elibc_glibc? ( sys-libs/glibc[-crypt(+)] ) !sys-libs/musl )
+REQUIRED_USE=split-usr? ( system )
+RESTRICT=!test? ( test )
+SLOT=0/1
+SRC_URI=https://github.com/besser82/libxcrypt/archive/v4.4.16.tar.gz -> libxcrypt-4.4.16.tar.gz
+_eclasses_=autotools	d0e5375d47f4c809f406eb892e531513	libtool	f143db5a74ccd9ca28c1234deffede96	multibuild	40fe59465edacd730c644ec2bc197809	multilib	2477ebe553d3e4d2c606191fe6c33602	multilib-build	1979aa0ff4d356d32507ca4650d9f37d	multilib-minimal	8bddda43703ba94d8341f4e247f97566	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	157a6a7a3e99c7dbdf81acc9dd4f57cd	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=95ec4b35a5ee9a4644040ec89e6d9463

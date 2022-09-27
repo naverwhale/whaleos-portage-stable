@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Enable colorization of man pages
+EAPI=5
+HOMEPAGE=http://www.gentoo.org/
+KEYWORDS=*
+LICENSE=GPL-2
+SLOT=0
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=bde818c27d974b8ee2c3fc5fa2eb1811

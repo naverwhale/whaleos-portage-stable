@@ -1,0 +1,28 @@
+https://code.djangoproject.com/ticket/23763
+From b07aa52e8a8e4c7fdc7265f75ce2e7992e657ae9 Mon Sep 17 00:00:00 2001
+From: Tim Graham <timograham@gmail.com>
+Date: Tue, 4 Nov 2014 20:56:00 -0500
+Subject: [PATCH] Added a dummy class for HTMLParserError; refs #23763.
+
+---
+ django/utils/html_parser.py | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/django/utils/html_parser.py b/django/utils/html_parser.py
+index efe54227d326..ab1f65497891 100644
+--- a/django/utils/html_parser.py
++++ b/django/utils/html_parser.py
+@@ -9,7 +9,12 @@
+     (current_version >= (3, 0) and current_version < (3, 2, 3))
+ )
+ 
+-HTMLParseError = _html_parser.HTMLParseError
++try:
++    HTMLParseError = _html_parser.HTMLParseError
++except AttributeError:
++    # create a dummy class for Python 3.5+ where it's been removed
++    class HTMLParseError(Exception):
++        pass
+ 
+ if not use_workaround:
+     if current_version >= (3, 4):

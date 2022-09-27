@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=Lists directories recursively, and produces an indented listing of files
+EAPI=7
+HOMEPAGE=http://mama.indstate.edu/users/ice/tree/
+KEYWORDS=*
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=ftp://mama.indstate.edu/linux/tree/tree-1.8.0.tgz
+_eclasses_=bash-completion-r1	47a7402d95930413ce25ba8d857339bb	eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	5d5921a298e95441da2f85be419894c0	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=c4e42b72d5db1a54055fb1e558774630

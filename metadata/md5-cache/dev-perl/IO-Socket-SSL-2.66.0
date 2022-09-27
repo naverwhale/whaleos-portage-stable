@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=dev-perl/Mozilla-CA >=dev-perl/Net-SSLeay-1.460.0 virtual/perl-Scalar-List-Utils idn? ( || ( >=dev-perl/URI-1.50 dev-perl/Net-LibIDN dev-perl/Net-IDN-Encode ) ) virtual/perl-ExtUtils-MakeMaker dev-lang/perl
+DESCRIPTION=Nearly transparent SSL encapsulation for IO::Socket::INET
+EAPI=6
+HOMEPAGE=https://metacpan.org/release/IO-Socket-SSL
+IUSE=idn examples
+KEYWORDS=*
+LICENSE=|| ( Artistic GPL-1+ )
+RDEPEND=dev-perl/Mozilla-CA >=dev-perl/Net-SSLeay-1.460.0 virtual/perl-Scalar-List-Utils idn? ( || ( >=dev-perl/URI-1.50 dev-perl/Net-LibIDN dev-perl/Net-IDN-Encode ) ) dev-lang/perl:=
+SLOT=0
+SRC_URI=mirror://cpan/authors/id/S/SU/SULLR/IO-Socket-SSL-2.066.tar.gz
+_eclasses_=multiprocessing	c3cf317581e5bd068a4b851f03dd8cba	perl-functions	6ec4c4d8fc8324200f1c14e8d158c59b	perl-module	97206c028d9bdc9f248e022ac5c9fc83
+_md5_=bbe3c111ebee29c8ac066c401322e85d

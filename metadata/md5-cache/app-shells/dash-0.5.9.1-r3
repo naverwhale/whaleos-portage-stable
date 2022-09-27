@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=!static? ( libedit? ( dev-libs/libedit ) ) virtual/pkgconfig libedit? ( static? ( dev-libs/libedit[static-libs] ) )
+DESCRIPTION=Debian Almquist Shell
+EAPI=5
+HOMEPAGE=http://gondor.apana.org.au/~herbert/dash/
+IUSE=libedit static vanilla
+KEYWORDS=*
+LICENSE=BSD
+RDEPEND=!static? ( libedit? ( dev-libs/libedit ) )
+SLOT=0
+SRC_URI=http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.9.1.tar.gz
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	5d5921a298e95441da2f85be419894c0	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	26ca8a8bd95d6a74122c08ba98a4ee72
+_md5_=d2119c5725ab03e208dd5a3b40613e40

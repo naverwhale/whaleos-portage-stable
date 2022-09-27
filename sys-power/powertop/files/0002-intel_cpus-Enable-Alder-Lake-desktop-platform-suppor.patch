@@ -1,0 +1,47 @@
+From da8b73a94c26bc274f2eb42f4b1c344bdf1dda9c Mon Sep 17 00:00:00 2001
+From: Gayatri Kammela <gayatri.kammela@intel.com>
+Date: Tue, 24 Nov 2020 17:38:21 -0800
+Subject: [PATCH 10/11] intel_cpus: Enable Alder Lake desktop platform support
+ in PowerTop
+
+Signed-off-by: Gayatri Kammela <gayatri.kammela@intel.com>
+
+diff --git a/src/cpu/intel_cpus.cpp b/src/cpu/intel_cpus.cpp
+index 40fa5742c249..62ca2d8e1b83 100644
+--- a/src/cpu/intel_cpus.cpp
++++ b/src/cpu/intel_cpus.cpp
+@@ -80,6 +80,7 @@ static int intel_cpu_models[] = {
+ 	0x8E,	/* KBL */
+ 	0X8F, 	/* SAPPHIRERAPIDS_X */
+ 	0x96,	/* EHL */
++	0x97,	/* ADL_DESKTOP */
+ 	0x9C,	/* JSL */
+ 	0x9E,	/* KBL */
+ 	0xA5,   /* CML_DESKTOP */
+@@ -195,6 +196,7 @@ nhm_core::nhm_core(int model)
+ 		case 0x8E:	/* KBL */
+ 		case 0x8F:	/* SAPPHIRERAPIDS_X */
+ 		case 0x96:	/* EHL */
++		case 0x97:	/* ADL_DESKTOP */
+ 		case 0x9C:	/* JSL */
+ 		case 0x9E:	/* KBL */
+ 		case 0xA5:      /* CML_DESKTOP */
+@@ -386,6 +388,7 @@ nhm_package::nhm_package(int model)
+ 		case 0x8E:	/* KBL */
+ 		case 0x8F:	/* SAPPHIRERAPIDS_X */
+ 		case 0x96:      /* EHL */
++		case 0x97:	/* ADL_DESKTOP */
+ 		case 0x9C:	/* JSL */
+ 		case 0x9E:	/* KBL */
+ 		case 0xA5:      /* CML_DESKTOP */
+@@ -430,6 +433,7 @@ nhm_package::nhm_package(int model)
+ 		case 0x8D:	/* TGL_DESKTOP */
+ 		case 0x8E:	/* KBL */
+ 		case 0x96:      /* EHL */
++		case 0x97:	/* ADL_DESKTOP */
+ 		case 0x9C:	/* JSL */
+ 		case 0x9E:	/* KBL */
+ 		case 0xA5:      /* CML_DESKTOP */
+-- 
+2.17.1
+

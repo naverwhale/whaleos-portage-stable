@@ -1,0 +1,14 @@
+BDEPEND=>=app-portage/elt-patches-20170815
+DEFINED_PHASES=configure install postinst prepare
+DEPEND=mpi? ( virtual/mpi ) !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=An open-source memory debugger for GNU/Linux
+EAPI=7
+HOMEPAGE=http://www.valgrind.org
+IUSE=mpi
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=mpi? ( virtual/mpi )
+SLOT=0
+SRC_URI=ftp://sourceware.org/pub/valgrind/valgrind-3.17.0.tar.bz2
+_eclasses_=autotools	d0e5375d47f4c809f406eb892e531513	eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	5d5921a298e95441da2f85be419894c0	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	2477ebe553d3e4d2c606191fe6c33602	pax-utils	3551398d6ede2b572568832730cc2a45	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=e245cf53599a2e71da86f9f917f123b2

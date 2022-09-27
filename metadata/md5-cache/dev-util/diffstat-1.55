@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Display a histogram of diff changes
+EAPI=4
+HOMEPAGE=http://invisible-island.net/diffstat/diffstat.html
+KEYWORDS=*
+LICENSE=HPND
+SLOT=0
+SRC_URI=ftp://invisible-island.net/diffstat/diffstat-1.55.tgz
+_md5_=8089ba7d636661b9741790dd611d48d0

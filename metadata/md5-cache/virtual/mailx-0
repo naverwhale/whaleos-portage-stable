@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=Virtual for mail implementations
+EAPI=3
+KEYWORDS=*
+RDEPEND=|| ( mail-client/mailx mail-client/nail net-mail/mailutils )
+SLOT=0
+_md5_=a0ea6bc4c19744f8735615e273d12e12

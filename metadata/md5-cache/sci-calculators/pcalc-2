@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=the programmers calculator
+EAPI=0
+HOMEPAGE=http://pcalc.sourceforge.net/
+KEYWORDS=*
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=mirror://sourceforge/pcalc/pcalc-2.tar.lzma
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=7cc62a830b899520924e772f8c102346

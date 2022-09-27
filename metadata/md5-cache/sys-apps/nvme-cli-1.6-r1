@@ -1,0 +1,14 @@
+DEFINED_PHASES=configure prepare
+DEPEND=uuid? ( sys-apps/util-linux:= )
+DESCRIPTION=NVM-Express user space tooling for Linux
+EAPI=6
+HOMEPAGE=https://github.com/linux-nvme/nvme-cli
+IUSE=+uuid
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=uuid? ( sys-apps/util-linux:= )
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/linux-nvme/nvme-cli/archive/v1.6.tar.gz -> nvme-cli-1.6.tar.gz
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=6a79ce7a0e96b83513fab7c455d398ec

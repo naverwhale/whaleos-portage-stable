@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=Virtual for awk implementation
+EAPI=7
+KEYWORDS=*
+RDEPEND=|| ( >=sys-apps/gawk-4.0.1-r1 sys-apps/mawk sys-apps/nawk sys-apps/busybox )
+SLOT=0
+_md5_=ecf74f9cb928494701580b5cc5f01197

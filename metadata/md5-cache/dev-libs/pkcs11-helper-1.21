@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install
+DEPEND=!libressl? ( >=dev-libs/openssl-0.9.7:= ) libressl? ( dev-libs/libressl ) gnutls? ( >=net-libs/gnutls-1.4.4 ) nss? ( dev-libs/nss ) virtual/pkgconfig doc? ( >=app-doc/doxygen-1.4.7 )
+DESCRIPTION=PKCS#11 helper library
+EAPI=5
+HOMEPAGE=https://github.com/OpenSC/pkcs11-helper
+IUSE=doc gnutls libressl nss static-libs
+KEYWORDS=*
+LICENSE=|| ( BSD GPL-2 )
+RDEPEND=!libressl? ( >=dev-libs/openssl-0.9.7:= ) libressl? ( dev-libs/libressl ) gnutls? ( >=net-libs/gnutls-1.4.4 ) nss? ( dev-libs/nss )
+SLOT=0
+SRC_URI=https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.21/pkcs11-helper-1.21.tar.bz2
+_eclasses_=ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=56496905c1e32b6d99a20550bbcbb289

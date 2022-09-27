@@ -1,0 +1,14 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=iodbc? ( dev-db/libiodbc ) kerberos? ( virtual/krb5 ) odbc? ( dev-db/unixODBC ) >=app-portage/elt-patches-20170815 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=Tabular Datastream Library.
+EAPI=4
+HOMEPAGE=http://www.freetds.org/
+IUSE=kerberos odbc iodbc mssql
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=iodbc? ( dev-db/libiodbc ) kerberos? ( virtual/krb5 ) odbc? ( dev-db/unixODBC )
+RESTRICT=test
+SLOT=0
+SRC_URI=http://ibiblio.org/pub/Linux/ALPHA/freetds/stable/freetds-0.91.tar.gz
+_eclasses_=autotools	d0e5375d47f4c809f406eb892e531513	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=60abd17426be7747be916ce23e2fa593

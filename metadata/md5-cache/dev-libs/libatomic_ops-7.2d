@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=Implementation for atomic memory update operations
+EAPI=4
+HOMEPAGE=http://www.hpl.hp.com/research/linux/atomic_ops/
+KEYWORDS=*
+LICENSE=MIT boehm-gc GPL-2+
+SLOT=0
+SRC_URI=http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/gc-7.2d.tar.gz
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6
+_md5_=2a66c5f99dc1ccd7048b4e4128a4689f

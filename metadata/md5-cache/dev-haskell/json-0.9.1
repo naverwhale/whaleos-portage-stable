@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/mtl:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-7.4.1:= generic? ( >=dev-haskell/syb-0.3.3:=[profile?] ) parsec? ( dev-haskell/parsec:=[profile?] ) >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Support for serialising Haskell to and from JSON
+EAPI=5
+HOMEPAGE=http://hackage.haskell.org/package/json
+IUSE=+generic mapdict +parsec +pretty doc hscolour profile
+KEYWORDS=*
+LICENSE=BSD
+RDEPEND=dev-haskell/mtl:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-7.4.1:= generic? ( >=dev-haskell/syb-0.3.3:=[profile?] ) parsec? ( dev-haskell/parsec:=[profile?] )
+SLOT=0/0.9.1
+SRC_URI=mirror://hackage/packages/archive/json/0.9.1/json-0.9.1.tar.gz
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	cfc8267c6151d804d0c34bf9e180533f	haskell-cabal	433b5153bec6b0ffe21c7be2210e8396	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	multiprocessing	c3cf317581e5bd068a4b851f03dd8cba	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	f783d68a26b62d6b19e070e6bcada5e6	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=3687a395493dfe7beaaa2fb1e328b8ea

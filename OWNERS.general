@@ -1,0 +1,15 @@
+# Ebuild/eclass experts!
+# Prefer sending reviews to the alias, since it
+# allows the load to be spread around.
+ebuild-reviews@google.com
+
+# Individual reviewers if needed.
+# When adding/removing people here, remember to update the gwsq group:
+# http://g/ebuild-reviews
+allenwebb@google.com
+bmgordon@chromium.org
+chirantan@chromium.org
+jrosenth@chromium.org
+manojgupta@chromium.org
+
+include chromiumos/chromite:/OWNERS.build
